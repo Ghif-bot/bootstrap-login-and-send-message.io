@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/6f05757a67.js"></script>
+</head>
+<style>
+    body {
+        background-image: url("https://www.wallpapers13.com/wp-content/uploads/2019/07/Sunrise-landscape-photography-early-morning-swamp-evaporation-streaming-sky-Download-4k-wallpaper-images-for-your-desktop-background-1920x1200.jpg");
+        font-family: 'Times New Roman', Times, serif;
+        color: white;
+        padding: 10px 100px 0px 100px;
+    }
+    
+    .bg {
+        background-image: linear-gradient(110deg, #f187f5 0%, #fbc2f6 100%);
+    }
+    
+    label {
+        font-weight: bold;
+        font-size: 18px;
+    }
+    
+    h5 {
+        width: 95%;
+        text-align: center;
+        border-bottom: 3px solid #000;
+        margin: 10px 10px 0px;
+    }
+    
+    h6 {
+        width: 95%;
+        text-align: center;
+        border-bottom: 3px solid #000;
+        margin-left: 10px;
+        margin-right: 10px
+    }
+    
+    h6 span {
+        padding: 0 10px;
+    }
+    
+    .btn-xl {
+        padding: 10px 16px;
+    }
+</style>
+
+<body>
+    <div class="d-flex min-vh-100 flex-column aligns-items-center justify-content-center">
+        <div class="container p-0 card shadow border-0 rounded" style="max-width: 40rem; max-height:50rem; background-color: lightblue;"></div>
+        <div class="card-header" style="font-size: 40px; font-weight: bold; ">
+            <h3>Contact Us</h3>
+        </div>
+        <form id="contact-form" name="formulir hubungi" onsubmit="return validateForm()">
+            <div class="controls mt-2">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group mx-3">
+                            <label for="form_name">First Name</label>
+                            <input id="form_name" type="text" name="name" class="form-control" placeholder="First Name" required="required" data-error="Firstname is required.">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group  mx-3">
+                            <label for="form_lastname">Last Name *</label>
+                            <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Last Name" required="required" data-error="Lastname is required.">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group mx-3">
+                            <label for="form_email">Email</label>
+                            <input id="form_email" type="email" name="email" class="form-control" placeholder="Email so we can contact you!" required="required" data-error="Valid email is required.">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group  mx-3">
+                            <label for="form_need">Please specify your need *</label>
+                            <select id="form_need" name="need" class="form-control" required="required" data-error="Please specify your need.">
+                                    <option value=""></option>
+                                    <option value="Request quotation">Requests</option>
+                                    <option value="Request order status">Inquiries</option>
+                                    <option value="Request copy of an invoice">Complaints</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group  mx-3">
+                            <label for="form_message">Message</label>
+                            <textarea id="form_message" name="message" class="form-control" placeholder="Tell us what's on your mind!" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <input type="submit" class="btn btn-send my-4 mx-3" style="background-color: white; color: black; font-weight: bold" value="Send">
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            if (document.forms["formulir hubungi"]["nama"].value == "") {
+                alert("Fill name!");
+                document.forms["formulir hubungi"]["nama"].focus();
+                return false;
+            }
+            if (document.forms["formulir hubungi"]["surname"].value == "") {
+                alert("Fill surname!");
+                document.forms["formulir hubungi"]["surname"].focus();
+                return false;
+            }
+            if (document.forms["formulir hubungi"]["email"].value == "") {
+                alert("Fill email!");
+                document.forms["formulir hubungi"]["email"].focus();
+                return false;
+            }
+            if (document.forms["formulir hubungi"]["message"].value == "") {
+                alert("Fill message!");
+                document.forms["formulir hubungi"]["message"].focus();
+                return false;
+            }
+
+
+
+            return false;
+        }
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://use.fontawesome.com/6f05757a67.js"></script>
+</head>
+<style>
+    body {
+        background-image: url("https://www.wallpapers13.com/wp-content/uploads/2019/07/Sunrise-landscape-photography-early-morning-swamp-evaporation-streaming-sky-Download-4k-wallpaper-images-for-your-desktop-background-1920x1200.jpg");
+        font-family: 'Times New Roman', Times, serif;
+    }
+    
+    .bg {
+        background-image: linear-gradient(110deg, #f187f5 0%, #fbc2f6 100%);
+        color: black;
+    }
+    
+    label {
+        font-weight: bold;
+        font-size: 18px;
+    }
+    
+    h5 {
+        width: 95%;
+        text-align: center;
+        border-bottom: 3px solid #000;
+        margin: 10px 10px 0px;
+    }
+    
+    h6 {
+        width: 95%;
+        text-align: center;
+        border-bottom: 3px solid #000;
+        margin-left: 10px;
+        margin-right: 10px
+    }
+    
+    h6 span {
+        padding: 0 10px;
+    }
+    
+    .btn-xl {
+        padding: 10px 16px;
+    }
+</style>
+
+<body>
+    <div class="d-flex min-vh-100 flex-column aligns-items-center justify-content-center">
+        <div class="container p-0 card shadow border-0 rounded" style="max-width: 40rem; max-height:50rem; background-color: lightblue;">
+            <div class="card-header bg">
+                <h3>Login</h3>
+            </div>
+            <form name="Formulir Pendaftaran" action="" onsubmit="return validateForm()" id="myForm">
+                <div class="form-group mt-3 mx-2">
+                    <label>Username</label>
+                    <input type="text" name="nama" placeholder="Username" class="form-control" required maxlength="10" minlength="3">
+                </div>
+                <div class="form-group mt-3 mx-2">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Password" class="form-control" required maxlength="10" minlength="4">
+                </div>
+                <div style="padding-left: 10px;">
+                    <button type="submit" class="btn btn-primary mt-3 id=" myBtn " style="background-color: #ffaaaa; ">Submit</button>
+                </div>
+            </form>
+            <h5></h5>
+            <h6><span>Sign in With</span></h6>
+            <div class="d-flex gap-0 align-items-center my-2 ">
+                    <a href="http://gmail.com " class="btn btn-white btn-xl mx-auto "><i class="fa fa-google fa-2x "></i>
+                </a>
+                    <a href="http://facebook.com " class="btn btn-white btn-xl mx-auto "><i class="fa fa-facebook-square fa-2x "></i>
+                </a>
+                    <a href="http://instagram.com " class="btn btn-white btn-xl mx-auto "><i class="fa fa-instagram fa-2x "></i>
+                </a>
+                    <a href="https://www.linkedin.com " class="btn btn-white btn-xl mx-auto "><i class="fa fa-linkedin-square fa-2x "></i>
+                </a>
+                </div>
+        </div>
+        <div class="d-flex justify-content-center mt-4 ">
+            <p style ="font-size: 20px; color: white ">Have a message for us? Please drop&nbsp;<a href="./contact.html " class="text-reset " style ="font-size: 20px; font-weight: bold; font-style: italic; "> Here
+            </a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            if (document.forms["Formulir Pendaftaran "]["nama "].value == " ") {
+                alert("Fill name! ");
+                document.forms["Formulir Pendaftaran "]["nama "].focus();
+                return false;
+            }
+            if (document.forms["Formulir Pendaftaran "]["password "].value == " ") {
+                alert("Fill password! ");
+                document.forms["Formulir Pendaftaran "]["password "].focus();
+                return false;
+            }
+
+            swal({
+                title: "Data telah disimpan ",
+                text: "Terima kasih telah mengisi formulir Pendaftaran! ",
+                icon: 'success',
+            }).then(okay => {
+                if (okay) {
+                    window.location.href = "index.html ";
+                }
+            });
+
+
+            return false;
+        }
+    </script>
+
+
+</body>
+
+</html>
